@@ -12,25 +12,13 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
-    flex-direction:column;
 }
 
 img{
     max-width:80%;
-    max-height:70vh;
+    max-height:80vh;
     border-radius:15px;
-    box-shadow:0 0 30px rgba(255,255,255,0.3);
-}
-
-button{
-    margin-top:20px;
-    padding:12px 25px;
-    font-size:18px;
-    background:#e10600;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+    box-shadow:0 0 40px rgba(255,255,255,0.4);
 }
 </style>
 </head>
@@ -39,16 +27,17 @@ button{
 
 <img src="myimage.jpg" alt="My Image">
 
-<button onclick="playAudio()">Play Audio</button>
-
-<audio id="audio" autoplay>
+<audio id="audio" autoplay loop>
     <source src="myaudio.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-function playAudio(){
-    document.getElementById("audio").play();
-}
+window.addEventListener('load', function() {
+    var audio = document.getElementById("audio");
+    audio.play().catch(function(error){
+        console.log("Autoplay blocked by browser.");
+    });
+});
 </script>
 
 </body>
