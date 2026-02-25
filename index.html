@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Special Page</title>
+<title>My Special Page</title>
 
 <style>
 body{
@@ -21,6 +21,7 @@ img{
     border-radius:15px;
     box-shadow:0 0 30px rgba(255,255,255,0.3);
 }
+
 button{
     margin-top:20px;
     padding:12px 25px;
@@ -36,18 +37,17 @@ button{
 
 <body>
 
-<img src="image.jpg" alt="Your Image">
+<img src="myimage.jpg" alt="My Image">
 
-<button onclick="playAudio()">Click to Start</button>
+<button onclick="playAudio()">Play Audio</button>
 
-<audio id="myAudio" autoplay>
-    <source src="audio.mp3" type="audio/mpeg">
+<audio id="audio" autoplay>
+    <source src="myaudio.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 function playAudio(){
-    var audio = document.getElementById("myAudio");
-    audio.play();
+    document.getElementById("audio").play();
 }
 </script>
 
